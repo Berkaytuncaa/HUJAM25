@@ -15,13 +15,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        CheckInput();
+        Move();
+    }
+
+    private void CheckInput()
+    {
         _input.x = Input.GetAxisRaw("Horizontal");
         _input.y = Input.GetAxisRaw("Vertical");
 
         _input.Normalize();
     }
 
-    private void FixedUpdate()
+    private void Move()
     {
         _rb.linearVelocity = (_input * _speed);
     }
