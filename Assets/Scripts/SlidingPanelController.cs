@@ -8,15 +8,17 @@ public class SlidingPanelController : MonoBehaviour
     private readonly int _slidePanelOpenAnimHash = Animator.StringToHash("SlidingPanelOpenAnim");
     private readonly int _slidePanelCloseAnimHash = Animator.StringToHash("SlidingPanelCloseAnim");
     
+    private ButtonTypes _currentButtonType;
+    
     
     [SerializeField] private GameObject slidingPanelOpen;
     private void Awake()
     {
-        DressUIController.OnTopButtonPressedEvent.AddListener(InvokeSlidePanelAnim);
+        DressUIController.OnButtonPressedEvent.AddListener(InvokeSlidePanelAnim);
         _slidePanelAnim = GetComponent<Animator>();
     }
 
-    private void InvokeSlidePanelAnim()
+    private void InvokeSlidePanelAnim(ButtonTypes buttonType)
     {
         if (slidingPanelOpen.activeSelf)
         {
@@ -25,6 +27,7 @@ public class SlidingPanelController : MonoBehaviour
         else
         {
             PlayAnimForward();
+            _currentButtonType = buttonType;
         }
 
         return;
@@ -43,11 +46,56 @@ public class SlidingPanelController : MonoBehaviour
     {
         Debug.Log("Slide Open Anim End");
         slidingPanelOpen.SetActive(true);
+        switch (_currentButtonType)
+        {
+            case ButtonTypes.TopButton:
+                var topPanelChild = slidingPanelOpen.transform.Find("TopPanel").gameObject;
+                topPanelChild.SetActive(true);
+                foreach (var child in topPanelChild.GetComponentsInChildren<Transform>(true))
+                {
+                    Debug.Log(child.gameObject.name);
+                    child.gameObject.SetActive(true);
+                }
+                break;
+            case ButtonTypes.BodyButton:
+                var bodyPanelChild = slidingPanelOpen.transform.Find("BodyPanel").gameObject;
+                bodyPanelChild.SetActive(true);
+                foreach (var child in bodyPanelChild.GetComponentsInChildren<Transform>(true))
+                {
+                    Debug.Log(child.gameObject.name);
+                    child.gameObject.SetActive(true);
+                }
+                break;
+            case ButtonTypes.GlovesButton:
+                var glovesPanelChild = slidingPanelOpen.transform.Find("GlovesPanel").gameObject;
+                glovesPanelChild.SetActive(true);
+                foreach (var child in glovesPanelChild.GetComponentsInChildren<Transform>(true))
+                {
+                    Debug.Log(child.gameObject.name);
+                    child.gameObject.SetActive(true);
+                }
+                break;
+            case ButtonTypes.BottomButton:
+                var bottomPanelChild = slidingPanelOpen.transform.Find("BottomPanel").gameObject;
+                bottomPanelChild.SetActive(true);
+                foreach (var child in bottomPanelChild.GetComponentsInChildren<Transform>(true))
+                {
+                    Debug.Log(child.gameObject.name);
+                    child.gameObject.SetActive(true);
+                }
+                break;
+            default:
+                throw new ArgumentOutOfRangeException("IDK What you did but congrats");
+        }
     }
 
     private void OnSlideCloseAnimStart()
     {
         Debug.Log("Slide Close Anim End");
+        foreach (var child in slidingPanelOpen.GetComponentsInChildren<Transform>())
+        {
+            child.gameObject.SetActive(false);
+        }
         slidingPanelOpen.SetActive(false);
     }
 }
