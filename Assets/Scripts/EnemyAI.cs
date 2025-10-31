@@ -26,7 +26,13 @@ public class EnemyAI : MonoBehaviour
     [Header("Attack Settings")]
     public float attackCooldown = 1.5f;
     private float _attackTimer = 0f;
-    private float _maxHealth;
+
+    [Header("Rotation")]
+    public float rotationSpeed = 10f;
+    public bool faceUpwardsSprite = false;
+
+    [Header("Health")]
+    [SerializeField] private float _maxHealth = 2;
     private float _currentHealth;
 
     void Start()
@@ -64,6 +70,13 @@ public class EnemyAI : MonoBehaviour
         _isAgro = false;
         _isAttacking = false;
 
+        Vector2 direction = _roamTarget - (Vector2)transform.position;
+        if (direction.magnitude > 0.1f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, _roamTarget, moveSpeed * Time.deltaTime);
+            RotateTowards(direction);
+        }
+
         // Move toward roam target
         transform.position = Vector2.MoveTowards(transform.position, _roamTarget, moveSpeed * Time.deltaTime);
         Debug.Log("I am roaming!!");
@@ -88,7 +101,9 @@ public class EnemyAI : MonoBehaviour
         if (player != null)
         {
             Debug.Log("I am chasing the Player!!");
+            Vector2 direction = (player.position - transform.position).normalized;
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            RotateTowards(direction);
         }
     }
 
@@ -101,7 +116,12 @@ public class EnemyAI : MonoBehaviour
 
         _isAttacking = true;
 
-        
+        if (player != null)
+        {
+            Vector2 dir = (player.position - transform.position).normalized;
+            RotateTowards(dir);
+        }
+
         Debug.Log($"{gameObject.name} attacks the player!");
         // TODO: add animations, player.currentHealth--
 
@@ -112,6 +132,16 @@ public class EnemyAI : MonoBehaviour
     {
         Vector2 randomDirection = Random.insideUnitCircle * roamRadius;
         _roamTarget = _startPosition + randomDirection;
+    }
+
+    private void RotateTowards(Vector2 direction)
+    {
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (faceUpwardsSprite)
+            angle -= 90f; // adjust if sprite faces up
+
+        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     public void TakeDamage(float damage)
