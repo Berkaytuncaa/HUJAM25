@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="83963147-732e-47c3-80f7-b20582c18a1b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HUJAM25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HUJAM25/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/SlidingPanel/SlidingPanel.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/SlidingPanel/SlidingPanel.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/SlidingPanel/SlidingPanelCloseAnim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/SlidingPanel/SlidingPanelCloseAnim.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/SlidingPanel/SlidingPanelOpenAnim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/SlidingPanel/SlidingPanelOpenAnim.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ScrapScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ScrapScenes/UITest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DressUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DressUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SlidingPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SlidingPanelController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1761912087749</updated>
-      <workItem from="1761912093298" duration="5949000" />
+      <workItem from="1761912093298" duration="6403000" />
     </task>
     <servers />
   </component>

@@ -39,9 +39,15 @@ public class SlidingPanelController : MonoBehaviour
         }
     }
 
-    private void OnSlideAnimEnd()
+    private void OnSlideOpenAnimEnd()
     {
-        Debug.Log("Slide Anim End");
+        Debug.Log("Slide Open Anim End");
         slidingPanelOpen.SetActive(true);
+    }
+
+    private void OnSlideCloseAnimStart()
+    {
+        Debug.Log("Slide Close Anim End");
+        slidingPanelOpen.SetActive(false);
     }
 }

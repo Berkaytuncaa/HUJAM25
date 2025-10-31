@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 23402229}
   - component: {fileID: 23402228}
   - component: {fileID: 23402227}
-  - component: {fileID: 23402226}
   m_Layer: 5
   m_Name: SlidingPanelOpen
   m_TagString: Untagged
@@ -158,28 +157,6 @@ RectTransform:
   m_AnchoredPosition: {x: -255, y: 0}
   m_SizeDelta: {x: -1386, y: -239.306}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &23402226
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23402224}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8211bc405763dbb4ba52a492d94d028a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &23402227
 MonoBehaviour:
   m_ObjectHideFlags: 0
