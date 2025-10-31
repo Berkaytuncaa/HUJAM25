@@ -13,15 +13,27 @@ namespace Player
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Interact();
+                Debug.Log("You Interacted");
             }
         }
 
         private void Interact()
         {
             var hit = Physics2D.OverlapCircle(transform.position, _interactRange, _interactableLayer);
-            if (!hit.GetComponent<Collider>()) return;
-            var interactable = hit.GetComponent<Collider>().GetComponent<IInteractable>();
+            if (hit is null)
+            {
+                Debug.Log("It's null");
+                return;
+            }
+            Debug.Log("It's not null");
+            var interactable = hit.GetComponent<IInteractable>();
             interactable?.OnInteract();
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, _interactRange);
         }
     }
 }
