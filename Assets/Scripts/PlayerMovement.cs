@@ -8,15 +8,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed;
     private Vector2 _input;
 
+    [Header("Rotation Settings")]
+    [SerializeField] private Camera _mainCamera;
+
     void Start()
     {
        _rb = GetComponent<Rigidbody2D>();
+
+        if (_mainCamera == null)
+            _mainCamera = Camera.main;
     }
 
     void Update()
     {
         CheckInput();
         Move();
+        RotateTowardsMouse();
     }
 
     private void CheckInput()
@@ -30,5 +37,22 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         _rb.linearVelocity = (_input * _speed);
+    }
+
+    private bool IsMoving()
+    {
+        return _input.sqrMagnitude > 0.01f;
+    }
+
+    private void RotateTowardsMouse()
+    {
+        Vector3 mousePos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 lookDir = (mousePos - transform.position);
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+
+        // (subtract 90° if your sprite faces up by default)
+        _rb.rotation = angle;
+        // _rb.rotation = angle - 90f;
     }
 }
