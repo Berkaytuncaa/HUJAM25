@@ -24,13 +24,17 @@ public class EnemyAI : MonoBehaviour
     private bool _isAttacking;
 
     [Header("Attack Settings")]
-    public float attackCooldown = 1.5f;  // seconds between attacks
+    public float attackCooldown = 1.5f;
     private float _attackTimer = 0f;
+    private float _maxHealth;
+    private float _currentHealth;
 
     void Start()
     {
         _startPosition = transform.position;
         PickNewRoamTarget();
+
+        _currentHealth = _maxHealth;
     }
 
     void Update()
@@ -108,6 +112,20 @@ public class EnemyAI : MonoBehaviour
     {
         Vector2 randomDirection = Random.insideUnitCircle * roamRadius;
         _roamTarget = _startPosition + randomDirection;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _currentHealth -= damage;
+        if (_currentHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
