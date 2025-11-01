@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
     private float _waitTimer;
     private bool _isAgro;
     private bool _isAttacking;
+    private bool _hasTakenDamage = false;
 
     [Header("Attack Settings")]
     public float attackCooldown = 1.5f;
@@ -77,7 +78,7 @@ public class EnemyAI : MonoBehaviour
         {
             AttackPlayer();
         }
-        else if (inAgroRange)
+        else if (inAgroRange || _hasTakenDamage)
         {
             ChasePlayer();
         }
@@ -182,6 +183,7 @@ public class EnemyAI : MonoBehaviour
         {
             Death();
         }
+        _hasTakenDamage = true;
     }
 
     private IEnumerator FlashRedEffect()
