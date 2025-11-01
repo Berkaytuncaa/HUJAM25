@@ -479,6 +479,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366414311}
   m_CullTransparentMesh: 1
+--- !u!1 &406295216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406295218}
+  - component: {fileID: 406295217}
+  m_Layer: 0
+  m_Name: Singleton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &406295217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406295216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40eb1060a9422e445b195f757207eb06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBlack: 0
+  isWhite: 0
+  isGlove: 0
+  isCap: 0
+--- !u!4 &406295218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406295216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 885.48584, y: 493.74765, z: -1.6069571}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &477624672
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +971,10 @@ MonoBehaviour:
   _snapRange: 100
   otherTorso: {fileID: 0}
   isTorso: 0
+  isWhite: 0
+  isBlack: 0
+  isGlove: 0
+  isCap: 0
 --- !u!1 &766871366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2382,6 +2434,10 @@ MonoBehaviour:
   _snapRange: 100
   otherTorso: {fileID: 0}
   isTorso: 0
+  isWhite: 0
+  isBlack: 0
+  isGlove: 0
+  isCap: 1
 --- !u!1 &1768357896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +2771,10 @@ MonoBehaviour:
   _snapRange: 100
   otherTorso: {fileID: 1908438585}
   isTorso: 0
+  isWhite: 0
+  isBlack: 1
+  isGlove: 0
+  isCap: 0
 --- !u!1 &1874444441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,6 +3054,10 @@ MonoBehaviour:
   _snapRange: 100
   otherTorso: {fileID: 1795869141}
   isTorso: 0
+  isWhite: 1
+  isBlack: 0
+  isGlove: 0
+  isCap: 0
 --- !u!1 &1921074700
 GameObject:
   m_ObjectHideFlags: 0
@@ -3219,6 +3283,10 @@ MonoBehaviour:
   _snapRange: 100
   otherTorso: {fileID: 0}
   isTorso: 0
+  isWhite: 0
+  isBlack: 0
+  isGlove: 1
+  isCap: 0
 --- !u!1 &2091851697
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,3 +3373,4 @@ SceneRoots:
   - {fileID: 1768357899}
   - {fileID: 1089816887}
   - {fileID: 2091851700}
+  - {fileID: 406295218}

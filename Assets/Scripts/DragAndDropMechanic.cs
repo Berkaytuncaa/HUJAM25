@@ -18,6 +18,12 @@ public class DragAndDropMechanic : MonoBehaviour, IDragHandler, IBeginDragHandle
     [SerializeField] private RectTransform otherTorso;
     [SerializeField] private bool isTorso;
 
+    [Header("I'm lazy")] 
+    [SerializeField] private bool isWhite;
+    [SerializeField] private bool isBlack;
+    [SerializeField] private bool isGlove;
+    [SerializeField] private bool isCap;
+        
     void Start()
     {
         _image = GetComponent<Image>();
@@ -64,6 +70,56 @@ public class DragAndDropMechanic : MonoBehaviour, IDragHandler, IBeginDragHandle
         transform.position = _snapTarget.position;
         _snapTarget.gameObject.SetActive(true);
         gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 0); // Make the dragged item invisible after snapping
+        CheckEverything();
+    }
+
+    private void CheckEverything()
+    {
+        if (isWhite)
+        {
+            Singleton.Instance.isWhite = true;
+            return;
+        }
+
+        if (isBlack)
+        {
+            Singleton.Instance.isBlack = true;
+            return;
+        }
+        if (isGlove)
+        {
+            Singleton.Instance.isGlove = true;
+            return;
+        }
+        if (isCap)
+        {
+            Singleton.Instance.isCap = true;
+        }
+    }
+    
+    
+    private void CheckEverythingAgain()
+    {
+        if (isWhite)
+        {
+            Singleton.Instance.isWhite = false;
+            return;
+        }
+
+        if (isBlack)
+        {
+            Singleton.Instance.isBlack = false;
+            return;
+        }
+        if (isGlove)
+        {
+            Singleton.Instance.isGlove = false;
+            return;
+        }
+        if (isCap)
+        {
+            Singleton.Instance.isCap = false;
+        }
     }
 
     private void ResetPosition()
@@ -73,5 +129,6 @@ public class DragAndDropMechanic : MonoBehaviour, IDragHandler, IBeginDragHandle
         transform.position = _startPosition;
         gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255); 
         _snapTarget.gameObject.SetActive(false);
+        CheckEverythingAgain();
     }
 }
