@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public LayerMask playerLayer;
     private Rigidbody2D _rb;
+    private PlayerMovement _playerMovement; 
 
     [Header("Ranges")]
     public float roamRadius = 5f;
@@ -50,6 +51,9 @@ public class EnemyAI : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
+        if (player != null)
+            _playerMovement = player.GetComponent<PlayerMovement>();
+
         _startPosition = transform.position;
         PickNewRoamTarget();
 
@@ -139,6 +143,11 @@ public class EnemyAI : MonoBehaviour
 
         Debug.Log($"{gameObject.name} attacks the player!");
         // TODO: add animations, player.currentHealth--
+
+        if (_playerMovement != null)
+        {
+            _playerMovement.TakeDamage(1);
+        }
 
         _attackTimer = attackCooldown;
     }
