@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 1909074471}
   - component: {fileID: 1909074473}
   - component: {fileID: 1909074472}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MeleeWeapon
   m_TagString: MeleeWeapon
   m_Icon: {fileID: 0}
@@ -982,6 +982,10 @@ MonoBehaviour:
   _meleeWeapon: {fileID: 1909074470}
   _attackDuration: 0.2
   _attackCooldown: 0.3
+  _maxHealth: 10
+  currentHealth: 0
+  invincibilityDuration: 1.5
+  flashInterval: 0.1
 --- !u!70 &2034792080
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
