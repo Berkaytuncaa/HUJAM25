@@ -8,7 +8,8 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public LayerMask playerLayer;
     private Rigidbody2D _rb;
-    private PlayerMovement _playerMovement; 
+    private PlayerMovement _playerMovement;
+    private Animator _anim;
 
     [Header("Ranges")]
     public float roamRadius = 5f;
@@ -51,6 +52,8 @@ public class EnemyAI : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+
         if (player != null)
             _playerMovement = player.GetComponent<PlayerMovement>();
 
@@ -133,6 +136,7 @@ public class EnemyAI : MonoBehaviour
         if (_attackTimer > 0)
             return;
 
+        _anim.SetTrigger("Attack");
         _isAttacking = true;
 
         if (player != null)

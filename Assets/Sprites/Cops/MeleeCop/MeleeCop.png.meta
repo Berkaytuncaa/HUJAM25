@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 35dec57781e9e41d487c00390cc487b3
+guid: a0c9a09b58556463bb1008911cc2cf22
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7781202394294830402
-    second: Untitled_Artwork 2_0
+      213: -8638421506506822070
+    second: Untitled_Artwork 5_0
   - first:
-      213: -743030377350021509
-    second: Untitled_Artwork 2_1
+      213: -8582677375622298851
+    second: Untitled_Artwork 5_1
   - first:
-      213: 7614467998597397591
-    second: Untitled_Artwork 2_2
-  - first:
-      213: 5315942570649815738
-    second: Untitled_Artwork 2_3
-  - first:
-      213: 4430170659579432187
-    second: Untitled_Artwork 2_4
+      213: 5439653131651235169
+    second: Untitled_Artwork 5_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -112,111 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork 2_0
+      name: MeleeCop_0
       rect:
         serializedVersion: 2
-        x: 1532
-        y: 1874
-        width: 62
-        height: 36
+        x: 388
+        y: 1062
+        width: 274
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 245cc5dd9526cfb60800000000000000
-      internalID: 7781202394294830402
+      spriteID: bf22ea83ab083462eb0a8426df251855
+      internalID: 839805582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork 2_1
+      name: MeleeCop_1
       rect:
         serializedVersion: 2
-        x: 1643
-        y: 1887
-        width: 58
-        height: 25
+        x: 734
+        y: 1052
+        width: 276
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b7e3abcfec930b5f0800000000000000
-      internalID: -743030377350021509
+      spriteID: 2e929c0c660354733955ef7b3c0a5c44
+      internalID: -1185708368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork 2_2
+      name: MeleeCop_2
       rect:
         serializedVersion: 2
-        x: 543
-        y: 277
-        width: 1123
-        height: 1599
+        x: 1105
+        y: 1117
+        width: 45
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 75c3af13d460ca960800000000000000
-      internalID: 7614467998597397591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 2_3
-      rect:
-        serializedVersion: 2
-        x: 784
-        y: 1833
-        width: 13
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aba85f95a9506c940800000000000000
-      internalID: 5315942570649815738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 2_4
-      rect:
-        serializedVersion: 2
-        x: 1854
-        y: 1602
-        width: 42
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bfc079a2eb02b7d30800000000000000
-      internalID: 4430170659579432187
+      spriteID: 184e6c0bda2b241098c28346d8cd14b5
+      internalID: -1536680808
       vertices: []
       indices: 
       edges: []
@@ -225,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2025e7f014e99411fbf14e1300af5075
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled_Artwork 2_0: 7781202394294830402
-      Untitled_Artwork 2_1: -743030377350021509
-      Untitled_Artwork 2_2: 7614467998597397591
-      Untitled_Artwork 2_3: 5315942570649815738
-      Untitled_Artwork 2_4: 4430170659579432187
+      MeleeCop_0: 839805582
+      MeleeCop_1: -1185708368
+      MeleeCop_2: -1536680808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

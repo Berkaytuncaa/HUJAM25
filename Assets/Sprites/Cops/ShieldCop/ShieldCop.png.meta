@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 079898af4ff5e4bf9aedd339d9bac046
+guid: b0b1464032e6a4f58a56902a851e3ed1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8416243949045666254
-    second: Untitled_Artwork 1_0
+      213: 1269588076273163515
+    second: Untitled_Artwork 6_0
+  - first:
+      213: -105562863937070682
+    second: Untitled_Artwork 6_1
+  - first:
+      213: -7403060565656634302
+    second: Untitled_Artwork 6_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,23 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork 1_0
+      name: ShieldCop_0
       rect:
         serializedVersion: 2
-        x: 502
-        y: 242
-        width: 1010
-        height: 1285
+        x: 344
+        y: 529
+        width: 251
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ec1d5edc7418cc470800000000000000
-      internalID: 8416243949045666254
+      spriteID: 6b65ea856d1524d1f829ad7999c407fb
+      internalID: -1050195838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldCop_1
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 523
+        width: 264
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f563b5c7ee044b2c96d939ac42974b6
+      internalID: -420825172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldCop_2
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 588
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a12f653aee040448f61dec1d73f3aa
+      internalID: -1614178190
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8f4a9601c651346db8e06a5d3a3b5a5e
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled_Artwork 1_0: 8416243949045666254
+      ShieldCop_0: -1050195838
+      ShieldCop_1: -420825172
+      ShieldCop_2: -1614178190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
