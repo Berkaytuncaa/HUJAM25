@@ -14,6 +14,9 @@ public class DragAndDropMechanic : MonoBehaviour, IDragHandler, IBeginDragHandle
     [Header("Snapping Settings")]
     [SerializeField] private RectTransform _snapTarget;   
     [SerializeField] private float _snapRange = 100f;
+    
+    [SerializeField] private RectTransform otherTorso;
+    [SerializeField] private bool isTorso;
 
     void Start()
     {
@@ -38,7 +41,7 @@ public class DragAndDropMechanic : MonoBehaviour, IDragHandler, IBeginDragHandle
     {
         _image.color = new Color32(255, 255, 255, 255);
 
-        if (_snapTarget != null && Vector3.Distance(transform.position, _snapTarget.position) <= _snapRange)
+        if (_snapTarget != null && RectTransformUtility.RectangleContainsScreenPoint(_snapTarget, transform.position)) //Vector3.Distance(transform.position, _snapTarget.position) <= _snapRange)
         {
             Debug.Log("Should Snap");
             SnapToTarget();
@@ -54,8 +57,13 @@ public class DragAndDropMechanic : MonoBehaviour, IDragHandler, IBeginDragHandle
 
     private void SnapToTarget()
     {
-            
+        if (isTorso)
+        {
+            otherTorso.GetComponent<DragAndDropMechanic>().ResetPosition();
+        }
         transform.position = _snapTarget.position;
+        _snapTarget.gameObject.SetActive(true);
+        gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 0); // Make the dragged item invisible after snapping
     }
 
     private void ResetPosition()
@@ -63,5 +71,7 @@ public class DragAndDropMechanic : MonoBehaviour, IDragHandler, IBeginDragHandle
         transform.SetParent(_originalParent);
         transform.SetSiblingIndex(_originalSiblingIndex);
         transform.position = _startPosition;
+        gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255); 
+        _snapTarget.gameObject.SetActive(false);
     }
 }

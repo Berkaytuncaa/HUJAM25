@@ -20,6 +20,7 @@ public class SlidingPanelController : MonoBehaviour
 
     private void InvokeSlidePanelAnim(ButtonTypes buttonType)
     {
+        Debug.Log("I'm here");
         if (slidingPanelOpen.activeSelf)
         {
             PlayAnimBackward();
