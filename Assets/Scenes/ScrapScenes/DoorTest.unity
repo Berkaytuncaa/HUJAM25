@@ -1023,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 1882192834718381253, guid: 458735f1e82f8dc4fa9f2b9bfca6d3d5, type: 3}
+      propertyPath: m_LinearDamping
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6773051292807162788, guid: 458735f1e82f8dc4fa9f2b9bfca6d3d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.256
