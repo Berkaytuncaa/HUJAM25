@@ -2,14 +2,13 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class EnemyAI : MonoBehaviour
+public class RangedEnemyAI : MonoBehaviour
 {
     [Header("References")]
     public Transform player;
     public LayerMask playerLayer;
     private Rigidbody2D _rb;
     private PlayerMovement _playerMovement;
-    private Animator _anim;
 
     [Header("Ranges")]
     public float roamRadius = 5f;
@@ -49,11 +48,15 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float stunDuration = 0.25f;
     private bool _isStunned = false;
 
+    [Header("Ranged Attack Settings")]
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float projectileSpeed = 8f;
+
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
-        _anim = GetComponent<Animator>();
 
         if (player != null)
             _playerMovement = player.GetComponent<PlayerMovement>();
@@ -76,10 +79,17 @@ public class EnemyAI : MonoBehaviour
 
         if (inAttackRange)
         {
+
+            Vector2 dir = (player.position - transform.position).normalized;
+            RotateTowards(dir);
+
             AttackPlayer();
         }
-        else if (inAgroRange || _hasTakenDamage)
+        else if (inAgroRange || _hasTakenDamage && !_isAttacking)
         {
+            Vector2 dir = (player.position - transform.position).normalized;
+            RotateTowards(dir);
+
             ChasePlayer();
         }
         else
@@ -137,22 +147,14 @@ public class EnemyAI : MonoBehaviour
         if (_attackTimer > 0)
             return;
 
-        _anim.SetTrigger("Attack");
         _isAttacking = true;
 
-        if (player != null)
-        {
-            Vector2 dir = (player.position - transform.position).normalized;
-            RotateTowards(dir);
-        }
+        if (player == null || projectilePrefab == null || firePoint == null)
+            return;
 
-        Debug.Log($"{gameObject.name} attacks the player!");
-        // TODO: add animations, player.currentHealth--
+        Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
 
-        if (_playerMovement != null)
-        {
-            _playerMovement.TakeDamage(1);
-        }
+        Debug.Log($"{gameObject.name} shoots at player!");
 
         _attackTimer = attackCooldown;
     }

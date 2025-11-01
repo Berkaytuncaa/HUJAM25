@@ -9,9 +9,20 @@ public class MeleeWeaponHitBox : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             EnemyAI enemy = collision.GetComponent<EnemyAI>();
+            RangedEnemyAI rangedEnemy = collision.GetComponent<RangedEnemyAI>();
             if (enemy != null)
             {
                 enemy.TakeDamage(_damage, transform.position);
+                Debug.Log("Hit enemy with melee!");
+            }
+        }
+
+        if (collision.CompareTag("RangedEnemy"))
+        {
+            RangedEnemyAI rangedEnemy = collision.GetComponent<RangedEnemyAI>();
+            if (rangedEnemy != null)
+            {
+                rangedEnemy.TakeDamage(_damage, transform.position);
                 Debug.Log("Hit enemy with melee!");
             }
         }
