@@ -115,28 +115,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork 38_0
-      rect:
-        serializedVersion: 2
-        x: 1054
-        y: 1048
-        width: 9
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e8ad55df6734ac50800000000000000
-      internalID: 6675521501130500327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Untitled_Artwork 38_1
       rect:
         serializedVersion: 2
@@ -145,7 +123,7 @@ TextureImporter:
         width: 279
         height: 189
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -164,10 +142,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1423
         y: 967
-        width: 485
-        height: 708
+        width: 241
+        height: 243
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,77 +158,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 38_3
-      rect:
-        serializedVersion: 2
-        x: 1795
-        y: 1072
-        width: 10
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 843f12b198ebd2350800000000000000
-      internalID: 5993656175175005000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 38_4
-      rect:
-        serializedVersion: 2
-        x: 1796
-        y: 1052
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e748f8cd046fa9ac0800000000000000
-      internalID: -3847492173195934594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 38_5
-      rect:
-        serializedVersion: 2
-        x: 1780
-        y: 737
-        width: 50
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5e2e13bdec070ce90800000000000000
-      internalID: -7007476986445438235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2ea0232018463b041889ada53550a757
     internalID: 0
     vertices: []
     indices: 

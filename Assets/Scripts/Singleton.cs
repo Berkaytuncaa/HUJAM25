@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Singleton : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class Singleton : MonoBehaviour
     public bool isWhite;
     public bool isGlove;
     public bool isCap;
+
     
     private void Awake()
     {

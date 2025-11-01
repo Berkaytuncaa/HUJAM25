@@ -121,144 +121,56 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork 40_0
+      name: Black-B-Gun_0
       rect:
         serializedVersion: 2
-        x: 402
-        y: 1611
-        width: 277
-        height: 189
+        x: 403
+        y: 1612
+        width: 275
+        height: 187
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c8cb21bfe98cb4f30800000000000000
-      internalID: 4560959632785456268
+      spriteID: 9e81e8b1f4e171c419b6a12614c9f3dd
+      internalID: -26541530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork 40_1
+      name: Black-B-Gun_1
       rect:
         serializedVersion: 2
-        x: 747
-        y: 1602
-        width: 264
-        height: 242
+        x: 748
+        y: 1603
+        width: 262
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6f80133d424d9f2a0800000000000000
-      internalID: -6703093315737155338
+      spriteID: 71df8fa010e352343851804b7264649c
+      internalID: -1810738934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork 40_2
+      name: Black-B-Gun_2
       rect:
         serializedVersion: 2
-        x: 1117
-        y: 1688
-        width: 10
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03d83a5b0b3f0e880800000000000000
-      internalID: -8583592949480977104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 40_3
-      rect:
-        serializedVersion: 2
-        x: 1859
-        y: 1711
-        width: 10
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 29afb4b7a25666a40800000000000000
-      internalID: 5361083639562762898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 40_4
-      rect:
-        serializedVersion: 2
-        x: 1860
-        y: 1671
-        width: 48
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e804407e4f2b68270800000000000000
-      internalID: 8252480132120592526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 40_5
-      rect:
-        serializedVersion: 2
-        x: 1844
-        y: 1416
-        width: 10
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af3938a21f5b1b9c0800000000000000
-      internalID: -3913146553803238406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 40_6
-      rect:
-        serializedVersion: 2
-        x: 1845
-        y: 1376
-        width: 48
+        x: 1118
+        y: 1689
+        width: 8
         height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -266,32 +178,120 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 56fdf11ac37a439d0800000000000000
-      internalID: -2795425589847138459
+      spriteID: 91b008ee59331d040b595c1a7cada6b5
+      internalID: -1260744217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork 40_7
+      name: Black-B-Gun_3
       rect:
         serializedVersion: 2
-        x: 1787
-        y: 737
-        width: 43
-        height: 351
+        x: 1860
+        y: 1712
+        width: 8
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 61ca5bdb171a2c2c0800000000000000
-      internalID: -4412787174983488490
+      spriteID: a50a6f3347fc0244aab0c30e30b2c0db
+      internalID: 818705975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black-B-Gun_4
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 1672
+        width: 46
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66dffdb476318b5489b85383168b1353
+      internalID: -1363609048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black-B-Gun_5
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1417
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51be64816ab9624caedb16094578bcc
+      internalID: 2059420327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black-B-Gun_6
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 1377
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4108e87a9459518459dd5d8c1991277d
+      internalID: 1640252253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black-B-Gun_7
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 738
+        width: 41
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ebb44808075a1c4aae0501a5025bb2f
+      internalID: 422707327
       vertices: []
       indices: 
       edges: []
@@ -300,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 923e0151b458b7549a4a66d1cbd13d9a
     internalID: 0
     vertices: []
     indices: 
@@ -310,14 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled_Artwork 40_0: 4560959632785456268
-      Untitled_Artwork 40_1: -6703093315737155338
-      Untitled_Artwork 40_2: -8583592949480977104
-      Untitled_Artwork 40_3: 5361083639562762898
-      Untitled_Artwork 40_4: 8252480132120592526
-      Untitled_Artwork 40_5: -3913146553803238406
-      Untitled_Artwork 40_6: -2795425589847138459
-      Untitled_Artwork 40_7: -4412787174983488490
+      Black-B-Gun_0: -26541530
+      Black-B-Gun_1: -1810738934
+      Black-B-Gun_2: -1260744217
+      Black-B-Gun_3: 818705975
+      Black-B-Gun_4: -1363609048
+      Black-B-Gun_5: 2059420327
+      Black-B-Gun_6: 1640252253
+      Black-B-Gun_7: 422707327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
