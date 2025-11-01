@@ -11,6 +11,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Rotation Settings")]
     [SerializeField] private Camera _mainCamera;
 
+    [Header("Melee Weapon Settings")]
+    [SerializeField] private GameObject _meleeWeapon;
+    [SerializeField] private float _attackDuration = 0.2f;
+    [SerializeField] private float _attackCooldown = 0.5f;
+
+    private bool _isAttacking = false;
+    private float _attackTimer = 0f;
+
     void Start()
     {
        _rb = GetComponent<Rigidbody2D>();
@@ -24,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
         CheckInput();
         Move();
         RotateTowardsMouse();
+
+        if (_attackTimer > 0)
+            _attackTimer -= Time.deltaTime;
     }
 
     private void CheckInput()
@@ -32,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
         _input.y = Input.GetAxisRaw("Vertical");
 
         _input.Normalize();
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !_isAttacking && _attackTimer <= 0)
+        {
+            StartCoroutine(MeleeAttack());
+        }
     }
 
     private void Move()
@@ -42,6 +58,24 @@ public class PlayerMovement : MonoBehaviour
     private bool IsMoving()
     {
         return _input.sqrMagnitude > 0.01f;
+    }
+
+
+
+    private IEnumerator MeleeAttack()
+    {
+        _isAttacking = true;
+        _attackTimer = _attackCooldown;
+
+        // Enable the melee weapon hitbox
+        _meleeWeapon.SetActive(true);
+        Debug.Log("Player swings melee weapon!");
+
+        yield return new WaitForSeconds(_attackDuration);
+
+        // Disable hitbox after attack ends
+        _meleeWeapon.SetActive(false);
+        _isAttacking = false;
     }
 
     private void RotateTowardsMouse()

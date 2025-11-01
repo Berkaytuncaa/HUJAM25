@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     [Header("References")]
     public Transform player;
     public LayerMask playerLayer;
+    private Rigidbody2D _rb;
 
     [Header("Ranges")]
     public float roamRadius = 5f;
@@ -26,11 +27,29 @@ public class EnemyAI : MonoBehaviour
     [Header("Attack Settings")]
     public float attackCooldown = 1.5f;
     private float _attackTimer = 0f;
-    private float _maxHealth;
+
+    [Header("Rotation")]
+    public float rotationSpeed = 10f;
+    public bool faceUpwardsSprite = false;
+
+    [Header("Health")]
+    [SerializeField] private float _maxHealth = 2;
     private float _currentHealth;
+
+    [Header("Damage Feedback")]
+    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Color _hitColor = Color.red;
+    [SerializeField] private float _flashDuration = 0.1f;
+
+    [Header("Knockback & Stun")]
+    [SerializeField] private float knockbackForce = 5f;
+    [SerializeField] private float stunDuration = 0.25f;
+    private bool _isStunned = false;
 
     void Start()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _rb = GetComponent<Rigidbody2D>();
         _startPosition = transform.position;
         PickNewRoamTarget();
 
@@ -39,6 +58,8 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (_isStunned) return;
+
         if (_attackTimer > 0)
             _attackTimer -= Time.deltaTime;
 
@@ -64,6 +85,13 @@ public class EnemyAI : MonoBehaviour
         _isAgro = false;
         _isAttacking = false;
 
+        Vector2 direction = _roamTarget - (Vector2)transform.position;
+        if (direction.magnitude > 0.1f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, _roamTarget, moveSpeed * Time.deltaTime);
+            RotateTowards(direction);
+        }
+
         // Move toward roam target
         transform.position = Vector2.MoveTowards(transform.position, _roamTarget, moveSpeed * Time.deltaTime);
         Debug.Log("I am roaming!!");
@@ -88,7 +116,9 @@ public class EnemyAI : MonoBehaviour
         if (player != null)
         {
             Debug.Log("I am chasing the Player!!");
+            Vector2 direction = (player.position - transform.position).normalized;
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            RotateTowards(direction);
         }
     }
 
@@ -101,7 +131,12 @@ public class EnemyAI : MonoBehaviour
 
         _isAttacking = true;
 
-        
+        if (player != null)
+        {
+            Vector2 dir = (player.position - transform.position).normalized;
+            RotateTowards(dir);
+        }
+
         Debug.Log($"{gameObject.name} attacks the player!");
         // TODO: add animations, player.currentHealth--
 
@@ -114,13 +149,58 @@ public class EnemyAI : MonoBehaviour
         _roamTarget = _startPosition + randomDirection;
     }
 
-    public void TakeDamage(float damage)
+    private void RotateTowards(Vector2 direction)
+    {
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (faceUpwardsSprite)
+            angle -= 90f; // adjust if sprite faces up
+
+        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    public void TakeDamage(float damage, Vector2 hitSourcePosition)
     {
         _currentHealth -= damage;
+        StartCoroutine(FlashRedEffect());
+        ApplyKnockback(hitSourcePosition);
+
         if (_currentHealth <= 0)
         {
             Death();
         }
+    }
+
+    private IEnumerator FlashRedEffect()
+    {
+        if (_spriteRenderer == null)
+            yield break;
+
+        Color originalColor = _spriteRenderer.color;
+        _spriteRenderer.color = _hitColor;
+        yield return new WaitForSeconds(_flashDuration);
+        _spriteRenderer.color = originalColor;
+    }
+
+    private void ApplyKnockback(Vector2 hitSourcePosition)
+    {
+        if (_rb == null) return;
+
+        Vector2 knockDir = ((Vector2)transform.position - hitSourcePosition).normalized;
+
+        _rb.linearVelocity = Vector2.zero;
+        _rb.AddForce(knockDir * knockbackForce, ForceMode2D.Impulse);
+
+        _isStunned = true;
+        StartCoroutine(RecoverFromStun());
+    }
+
+    private IEnumerator RecoverFromStun()
+    {
+        yield return new WaitForSeconds(stunDuration);
+        _isStunned = false;
+        if (_rb != null)
+            _rb.linearVelocity = Vector2.zero;
     }
 
     private void Death()
